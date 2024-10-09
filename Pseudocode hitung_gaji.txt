@@ -1,0 +1,36 @@
+Program hitung_gaji
+
+Deklarasi
+   var lamaKerja, jumlahJamKerja, jamLembur: integer;
+   var gajiPokok, totalGaji, uangLemburPerJam, tambahan: double;
+
+Algoritma
+   gajiPokok = 5.000.000;
+   uangLemburPerJam = 50.000;
+   INPUT (lamaKerja);
+   INPUT (jumlahJamKerja);
+
+// Hitung tambahan berdasarkan masa kerja
+   IF (lamaKerja < 5 tahun) THEN
+         tambahan = 0.0;
+   ELSE 
+      IF (lamaKerja >= 5 tahun AND lamaKerja <= 10 tahun) THEN
+          tambahan = gajiPokok * 0.05;
+      ELSE 
+          tambahan = gajiPokok * 0.10;
+   ENDIF
+
+// Hitung jam lembur
+   IF (jumlahJamKerja > 40 jam) THEN
+         jamLembur = jamKerja - 40;
+      ELSE
+          jamLembur = 0;
+    ENDIF
+
+// Hitung total gaji
+   totalGaji = gajiPokok + tambahan + (jamLembur * uangLemburPerJam)
+
+// Tampilkan total gaji
+   OUTPUT(totalGaji);
+
+END
